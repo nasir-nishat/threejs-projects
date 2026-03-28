@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossy Road</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+    <div id="score">0</div>
+    <div id="controls">
+        <div>
+            <button id="forward">
+                <svg width="30" height="30" viewBox="0 0 10 10">
+                    <g transform="rotate(0, 5,5)">
+                        <path d="M5,4 L7,6 L3,6 L5,4" />
+                    </g>
+                </svg>
+            </button>
+            <button id="left">
+                <svg width="30" height="30" viewBox="0 0 10 10">
+                    <g transform="rotate(-90, 5,5)">
+                        <path d="M5,4 L7,6 L3,6 L5,4" />
+                    </g>
+                </svg>
+            </button>
+            <button id="backward">
+                <svg width="30" height="30" viewBox="0 0 10 10">
+                    <g transform="rotate(180, 5,5)">
+                        <path d="M5,4 L7,6 L3,6 L5,4" />
+                    </g>
+                </svg>
+            </button>
+            <button id="right">
+                <svg width="30" height="30" viewBox="0 0 10 10">
+                    <g transform="rotate(90, 5,5)">
+                        <path d="M5,4 L7,6 L3,6 L5,4" />
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="results">
+        <div class="content">
+            <h1>Game Over</h1>
+            <p>Your score: <span id="score-result"></span></p>
+            <button id="retry">Retry</button>
+        </div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>

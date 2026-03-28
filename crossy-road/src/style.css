@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Press Start 2P', cursive;
+  overflow: hidden;
+  user-select: none;
+  background-color: #82c545;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#score {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 0 #000;
+  z-index: 10;
+}
+
+#controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+  z-index: 10;
+}
+
+#controls > div {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+  font-family: 'Press Start 2P', cursive;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+#forward { top: 0; left: 50px; }
+#left { top: 50px; left: 0; }
+#backward { top: 100px; left: 50px; }
+#right { top: 50px; left: 100px; }
+
+button svg {
+  fill: #333;
+  stroke: black;
+  stroke-width: 1;
+}
+
+#results {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  z-index: 20;
+}
+
+#results .content {
+  background-color: #333;
+  padding: 50px;
+  border-radius: 20px;
+  border: 4px solid white;
+}
+
+#results h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+#results p {
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+#results button {
+  position: static;
+  width: 150px;
+  height: 50px;
+  font-size: 15px;
+  color: black;
+}
