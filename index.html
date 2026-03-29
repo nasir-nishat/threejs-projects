@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>3D WebGL Portfolio</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        
+        <!-- Toggle Menu Button (Mobile) -->
+        <button id="menu-toggle">☰</button>
+
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <h1>Creative <span>Works</span></h1>
+                <p>Interactive 3D WebGL Experiences</p>
+            </div>
+            
+            <nav id="project-list">
+                <div class="project-card" data-url="./tunnel-boat/index.html">
+                    <h3>Tunnel Boat Survivor</h3>
+                    <p>Procedural procedural endless runner with neon themes.</p>
+                </div>
+                <div class="project-card" data-url="./crossy-road/index.html">
+                    <h3>Crossy Road Clone</h3>
+                    <p>Isometric voxel-style 3D traffic hopper.</p>
+                </div>
+                <div class="project-card" data-url="./3d-globe/index.html">
+                    <h3>Interactive 3D Globe</h3>
+                    <p>GeoJSON mapped interactive earth visualization.</p>
+                </div>
+                <div class="project-card" data-url="./neon-tunnel/index.html">
+                    <h3>Neon Tunnel</h3>
+                    <p>Hypnotic infinite geometric tunnel descent.</p>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Built with Three.js & Vite</p>
+            </div>
+        </aside>
+
+        <main id="content">
+            <div id="splash" class="active">
+                <h2>Select a Project</h2>
+                <p>Click on an item in the sidebar to load the WebGL experience.</p>
+            </div>
+            
+            <div id="iframe-container">
+                <div class="toolbar">
+                    <span id="current-title">Tunnel Boat Survivor</span>
+                    <button id="fullscreen-btn" title="Go Fullscreen">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                    </button>
+                </div>
+                <!-- sandbox allows scripts and same-origin to ensure local storage and WebGL works safely inside the standard environment -->
+                <iframe id="project-frame" src="" sandbox="allow-scripts allow-same-origin allow-popups disable-downloads"></iframe>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "threejs-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio Wrapper for Three.js Projects",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "latest"
+  }
+}
