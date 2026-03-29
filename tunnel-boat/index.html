@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tunnel Boat Survivor</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    
+    <div id="ui">
+        <div id="hud">
+            <div>Score: <span id="score">0</span>m</div>
+            <div>Speed: <span id="speed">10</span> km/h</div>
+            <button id="pause-btn">Pause</button>
+            <button id="fullscreen-btn">⛶</button>
+        </div>
+        
+        <div id="start-screen" class="overlay active">
+            <h1 class="neon-text">TunnelBoatSurvivor</h1>
+            <p>High Score: <span id="high-score">0</span>m</p>
+            <p class="blink">Tap or Press Space to Start</p>
+            <div class="controls-info">
+                <p>Keyboard: [A] / [D] or [Left] / [Right]</p>
+                <p>Touch: Left/Right Sides</p>
+            </div>
+        </div>
+
+        <div id="game-over-screen" class="overlay">
+            <h1 class="neon-text error">GAME OVER</h1>
+            <h2>Score: <span id="final-score">0</span>m</h2>
+            <p class="blink">Tap or Press Space to Restart</p>
+        </div>
+        
+        <div id="pause-screen" class="overlay">
+            <h1 class="neon-text">PAUSED</h1>
+            <p class="blink">Tap or Press Space to Resume</p>
+        </div>
+    </div>
+    
+    <div id="touch-left" class="touch-zone"></div>
+    <div id="touch-right" class="touch-zone"></div>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
