@@ -2,7 +2,7 @@ import { resolve } from 'path';
 
 export default {
   root: './',
-  base: '/project/',
+  base: './', // Use relative paths so it works standalone AND via proxy
   server: {
     port: 4000,
     cors: true
