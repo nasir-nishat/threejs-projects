@@ -51,6 +51,25 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('click', () => loadProject(card));
     });
 
+    // Scroll Reveal Animation (Intersection Observer)
+    const revealEls = document.querySelectorAll('.reveal');
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Optional: unobserve after reveal
+                // revealObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
     // Fullscreen API Logic
     fullscreenBtn.addEventListener('click', () => {
         if (!document.fullscreenElement) {
@@ -60,7 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error(`Error attempting to enable fullscreen: ${err.message}`);
             });
         } else {
-            document.exitFullscreen();
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
         }
     });
 

@@ -3,6 +3,11 @@ import { resolve } from 'path';
 export default {
   root: './',
   base: './', // Use relative paths so it works standalone AND via proxy
+  resolve: {
+    alias: {
+      'three': resolve(__dirname, 'neon-tunnel/node_modules/three')
+    }
+  },
   server: {
     port: 4000,
     cors: true

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>3D WebGL Portfolio</title>
     <link rel="stylesheet" href="./src/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,31 +21,54 @@
             </div>
 
             <nav id="project-list">
-                <div class="project-card" data-url="./tunnel-boat/index.html">
+                <div class="project-card reveal" data-url="./tunnel-boat/index.html">
                     <h3>Tunnel Boat Survivor</h3>
                     <p>Procedural procedural endless runner with neon themes.</p>
                 </div>
-                <div class="project-card" data-url="./crossy-road/index.html">
+                <div class="project-card reveal" data-url="./crossy-road/index.html">
                     <h3>Crossy Road Clone</h3>
                     <p>Isometric voxel-style 3D traffic hopper.</p>
                 </div>
-                <div class="project-card" data-url="./3d-globe/index.html">
+                <div class="project-card reveal" data-url="./3d-globe/index.html">
                     <h3>Interactive 3D Globe</h3>
                     <p>GeoJSON mapped interactive earth visualization.</p>
                 </div>
-                <div class="project-card" data-url="./neon-tunnel/index.html">
+                <div class="project-card reveal" data-url="./neon-tunnel/index.html">
                     <h3>Neon Tunnel</h3>
                     <p>Hypnotic infinite geometric tunnel descent.</p>
                 </div>
             </nav>
 
             <div class="sidebar-footer">
-                <p>Built by <a href="/" target="_parent"
-                        style="color: #58a6ff; text-decoration: none; font-weight: 500;">Nasir Nishat</a></p>
+                <div class="links">
+                    <a href="https://github.com/nasir-nishat/threejs-projects" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        GitHub Link
+                    </a>
+                    <a href="/" target="_parent">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Portfolio
+                    </a>
+                </div>
             </div>
         </aside>
 
         <main id="content">
+            <!-- Author Badge Overlay -->
+            <div class="author-badge">
+                <div class="dot"></div>
+                <span>Built by <a href="/" target="_parent">Nishat Nasir</a></span>
+            </div>
+
             <div id="splash" class="active">
                 <h2>Select a Project</h2>
                 <p>Click on an item in the sidebar to load the WebGL experience.</p>

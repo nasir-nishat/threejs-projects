@@ -1,15 +1,36 @@
+:root {
+    --bg-color: #09090b;
+    --text-color: #f4f4f5;
+    --text-muted: #a1a1aa;
+    --accent-color: #6366f1;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(9, 9, 11, 0.7);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-hover-bg: rgba(255, 255, 255, 0.06);
+    --selection-bg: #18181b;
+    --selection-text: #f4f4f5;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
 }
 
 body {
-    background-color: #0d1117;
-    color: #e6edf3;
-    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     overflow: hidden;
     height: 100vh;
+    line-height: 1.5;
 }
 
 #app {
@@ -21,116 +42,210 @@ body {
 /* SIDEBAR */
 #sidebar {
     width: 350px;
-    background: rgba(22, 27, 34, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     z-index: 10;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sidebar-header {
-    padding: 40px 30px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 48px 32px;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .sidebar-header h1 {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    margin-bottom: 4px;
+    color: #fff;
 }
 
 .sidebar-header h1 span {
-    color: #58a6ff;
+    color: var(--accent-color);
 }
 
 .sidebar-header p {
-    font-size: 14px;
-    color: #8b949e;
-    font-weight: 300;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 #project-list {
     flex: 1;
     overflow-y: auto;
-    padding: 20px 15px;
+    padding: 24px 20px;
 }
 
 /* Custom Scrollbar for list */
 #project-list::-webkit-scrollbar {
     width: 6px;
 }
+
 #project-list::-webkit-scrollbar-track {
     background: transparent;
 }
+
 #project-list::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 15px;
+    padding: 24px;
+    margin-bottom: 12px;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card h3 {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 6px;
-    color: #c9d1d9;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #fff;
     transition: color 0.2s;
+    letter-spacing: -0.02em;
 }
 
 .project-card p {
     font-size: 13px;
-    color: #8b949e;
-    line-height: 1.5;
+    color: var(--text-muted);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
 }
 
 .project-card:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--card-hover-bg);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    border-color: rgba(88, 166, 255, 0.3);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5);
+    border-color: rgba(99, 102, 241, 0.4);
 }
 
 .project-card.active {
-    background: rgba(88, 166, 255, 0.1);
-    border-color: #58a6ff;
-    box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+    background: rgba(99, 102, 241, 0.1);
+    border-color: #6366f1;
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.15);
 }
 
 .project-card.active h3 {
-    color: #58a6ff;
+    color: #6366f1;
 }
 
 .sidebar-footer {
-    padding: 20px;
+    padding: 24px;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 13px;
+    color: #8b949e;
+}
+
+.sidebar-footer .links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.sidebar-footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.sidebar-footer a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Floating Credit Badge */
+.author-badge {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(13, 17, 23, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    color: rgba(255, 255, 255, 0.7);
     font-size: 12px;
-    color: #484f58;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.author-badge:hover {
+    background: rgba(13, 17, 23, 0.8);
+    border-color: rgba(99, 102, 241, 0.4);
+    color: #fff;
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.author-badge .dot {
+    width: 6px;
+    height: 6px;
+    background: #6366f1;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #6366f1;
+}
+
+.author-badge a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.author-badge a:hover {
+    color: #6366f1;
 }
 
 /* MAIN CONTENT */
 #content {
     flex: 1;
     position: relative;
-    background: radial-gradient(circle at center, #161b22 0%, #0d1117 100%);
-    overflow: hidden; /* Contains the iframe properly */
+    background: #09090b;
+    overflow: hidden;
+}
+
+/* Reveal Animation styles */
+.reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1), transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #splash {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -160,7 +275,10 @@ body {
 
 #iframe-container {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     opacity: 0;
@@ -248,7 +366,7 @@ body {
 
     #sidebar.open {
         transform: translateX(0);
-        box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
     }
 
     #menu-toggle {
