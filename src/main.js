@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Extract Title and URL
         const url = card.getAttribute('data-url');
         const title = card.querySelector('h3').innerText;
+        
+        // Map Hash
+        const projName = url.split('/')[1];
+        if(window.location.hash !== `#${projName}`) {
+            window.history.pushState(null, null, `#${projName}`);
+        }
 
         // Apply
         currentTitle.innerText = title;
@@ -28,6 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Close sidebar on mobile
         sidebar.classList.remove('open');
+    }
+
+    // Check URL Hash on Boot
+    const hash = window.location.hash;
+    if (hash) {
+        const targetUrl = `./${hash.substring(1)}/index.html`;
+        const targetCard = Array.from(cards).find(c => c.getAttribute('data-url') === targetUrl);
+        if (targetCard) {
+            loadProject(targetCard);
+        }
     }
 
     // Attach Click Events to Cards
