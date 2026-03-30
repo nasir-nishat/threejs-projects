@@ -1,7 +1,7 @@
 {
   "name": "crossy-road",
   "version": "1.0.0",
-  "description": "Crossy Road clone with Three.js",
+  "description": "Crossy Road with Three.js",
   "main": "src/main.js",
   "scripts": {
     "dev": "vite",
