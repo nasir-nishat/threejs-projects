@@ -118,6 +118,12 @@ fetch(GEOJSON_URL)
   })
   .catch(err => {
     console.error('Error fetching/parsing GeoJSON:', err);
+    // Add fallback sphere or text to indicate error
+    const loader = document.createElement('div');
+    loader.style.position = 'absolute'; loader.style.top = '10px'; loader.style.width = '100%';
+    loader.style.textAlign = 'center'; loader.style.color = 'red';
+    loader.innerText = 'Failed to load map data. Check CORS.';
+    document.body.appendChild(loader);
   });
 
 function drawCoordinates(coordinates, material) {
